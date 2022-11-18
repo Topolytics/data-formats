@@ -1,0 +1,40 @@
+## Events Schema
+
+```json
+{
+  "$id": "events.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Description of a collection of events",
+  "meta:license": [
+    "Copyright 2021 Topolytics Ltd. All rights reserved.",
+    "EXAMPLE LICENCE"
+  ],
+  "title": "Events Collection",
+  "type": "object",
+  "properties": {
+    "events": {
+      "description": "Events within the collection",
+      "items": {
+        "$ref": "event.schema.json"
+      },
+      "title": "Events",
+      "type": "array"
+    },
+    "version": {
+      "description": "Schema version for validation",
+      "enum": [
+        "0.1.0"
+      ],
+      "meta:enum": {
+        "0.1.0": "Version 0.1.0"
+      },
+      "title": "Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "version",
+    "events"
+  ]
+}
+```
