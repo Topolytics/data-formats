@@ -4,12 +4,12 @@
 {
   "$id": "event.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Waste Event Standard Format for describing one event of one waste type",
+  "description": "Event Standard Format for describing one event",
   "meta:license": [
     "Copyright 2021 Topolytics Ltd. All rights reserved.",
     "EXAMPLE LICENCE"
   ],
-  "title": "Topolytics Waste Events Standard - Single Event",
+  "title": "Topolytics Events Standard - Single Event",
   "type": "object",
   "properties": {
     "device_id": {
