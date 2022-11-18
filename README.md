@@ -30,13 +30,14 @@ Topolytics propose the following fields for the events (see [examples](./example
 
 ![Event Format](images/event-format.png)
 
-- device_id - The unique identifier of the device used for scanning items.
-- device_coords - Location of where the device is located. This should be longitude/latitude coordinates.
-- timestamp - Date and timestamp of the item scanning event. The timestamp is in the following UTC format yyyy-mm-dd HH:MM:SS
-- event_type - [Further information about types of events](./events.md)
-- item_id - The identifier of the item material that can be looked up from the "product database"
-- item_description (optional) - Text description of the item or material. E.g. “plastic bottle”
-- party_id (optional) - Identifier of the party involved. The organisation and owner identification of the device at a site
+- **device_id** - The unique identifier of the device used for scanning items.
+- **device_lng** - Longitude of where the device is located.
+- **device_lat** - Latitude of where the device is located.
+- **timestamp** - Date and timestamp of the item scanning event. The timestamp is in the following UTC format yyyy-mm-dd HH:MM:SS
+- **event_type** - [Further information about types of events](./events.md)
+- **item_id** - The identifier of the item material that can be looked up from the "product database"
+- **item_description (optional)** - Text description of the item or material. E.g. “plastic bottle”
+- **party_id (optional)** - Identifier of the party involved. The organisation and owner identification of the device at a site
 
 This data should be encoded as valid JSON using UTF-8 character encoding. See Appendex ii for an example POST request using curl.
 
