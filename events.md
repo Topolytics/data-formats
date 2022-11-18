@@ -1,11 +1,11 @@
-# PragmatIC TRACE API Events
+# API Events
 
 > This document describes the API Events expected within the material movement and transformation flow.
 Introduction
 
 To understand how the flow of material operates a simulation was created. Locations were identified and categorised, with different types of activities (events) being undertaken at these locations.
 
-## Location Categories & Activities
+## Location Categories & Activities
 The following is a list of location categories and activities (event types), which translate into API events:
 
 ### Manufacturer of the packaging, e.g. Sharpak
@@ -16,7 +16,7 @@ The following is a list of location categories and activities (event types), whi
 - Category: `package_manufacturer`
 - Activities: `fill`
 
-### Processor site that washes packaging, e.g. IFCO, Bracknell
+### Processor site that washes packaging, e.g. IFCO, Bracknell
 - Category: `processor`
 - Activities: `wash`
 
@@ -24,7 +24,7 @@ The following is a list of location categories and activities (event types), whi
 - Category: `retail`
 - Activities: `distribute`
 
-### Retailer of the product e.g. Waitrose & Partners
+### Retailer of the product e.g. Waitrose & Partners
 - Category: `retail`
 - Activities: `sell`
 
