@@ -10,13 +10,15 @@
    "device_coords": "123.54,45.5",
    "timestamp": "2022-06-16T15:34:58Z",
    "event_type": "yyyy",
-   "item_id": "item1"
+   "item_id": "item1",
+   "item_description": "Optional description",
+   "party_id": "OPTIONAL:123"
 }
 ```
 ### Example POST Request
 
 ```sh
-curl --location --request POST 'https://events.dev.tp0.uk/event' \
+curl --location --request POST 'https://TOP_API_DOMAIN/event' \
 --header 'Authorization: Bearer <<TOKEN>> \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -24,7 +26,9 @@ curl --location --request POST 'https://events.dev.tp0.uk/event' \
     "device_coords": "123.54,45.5",
     "timestamp": "2022-06-16T15:34:58Z",
     "event_type": "yyyy",
-    "item_id": "item1"
+    "item_id": "item1",
+    "item_description": "Optional description",
+    "party_id": "OPTIONAL:123"
 }'
 ```
 
