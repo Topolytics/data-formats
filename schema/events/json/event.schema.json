@@ -15,11 +15,17 @@
       "type": "string",
       "example": "DID:12345"
     },
-    "device_coords": {
-      "title": "Device Coordinates",
-      "description": "Location of where the device is located. This should be - longitude/latitude coordinates.",
-      "type": "string",
-      "example": "longitude,latitude"
+    "device_lng": {
+      "title": "Device Longitude",
+      "description": "Longitude of where the device is located.",
+      "type": "number",
+      "example": 1.234
+    },
+    "device_lat": {
+      "title": "Device Location Latitude",
+      "description": "Latitude of where the device is located.",
+      "type": "number",
+      "example": 1.234
     },
     "timestamp": {
       "title": "Timestamp",
@@ -54,7 +60,8 @@
   },
   "required": [
     "device_id",
-    "device_coords",
+    "device_lng",
+    "device_lat",
     "timestamp",
     "event_type",
     "item_id"

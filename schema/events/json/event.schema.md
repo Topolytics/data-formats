@@ -6,12 +6,12 @@
 {
   "$id": "event.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Event Standard Format for describing one event",
+  "description": "Waste Event Standard Format for describing one event of one waste type",
   "meta:license": [
     "Copyright 2021 Topolytics Ltd. All rights reserved.",
     "EXAMPLE LICENCE"
   ],
-  "title": "Topolytics Events Standard - Single Event",
+  "title": "Topolytics Waste Events Standard - Single Event",
   "type": "object",
   "properties": {
     "device_id": {
@@ -20,11 +20,17 @@
       "type": "string",
       "example": "DID:12345"
     },
-    "device_coords": {
-      "title": "Device Coordinates",
-      "description": "Location of where the device is located. This should be - longitude/latitude coordinates.",
-      "type": "string",
-      "example": "longitude,latitude"
+    "device_lng": {
+      "title": "Device Longitude",
+      "description": "Longitude of where the device is located.",
+      "type": "number",
+      "example": 1.234
+    },
+    "device_lat": {
+      "title": "Device Location Latitude",
+      "description": "Latitude of where the device is located.",
+      "type": "number",
+      "example": 1.234
     },
     "timestamp": {
       "title": "Timestamp",
@@ -59,10 +65,12 @@
   },
   "required": [
     "device_id",
-    "device_coords",
+    "device_lng",
+    "device_lat",
     "timestamp",
     "event_type",
     "item_id"
   ]
 }
+
 ```
