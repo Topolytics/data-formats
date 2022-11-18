@@ -13,10 +13,9 @@
    "item_id": "item1"
 }
 ```
+### Example POST Request
 
-### Example POST Request
-
-```json
+```sh
 curl --location --request POST 'https://events.dev.tp0.uk/event' \
 --header 'Authorization: Bearer <<TOKEN>> \
 --header 'Content-Type: application/json' \

@@ -28,6 +28,8 @@ Additional processing and analytics will be generated from the stored events. Da
 ## Event Format
 Topolytics propose the following fields for the events (see [examples](./examples.md)):
 
+![Event Format](images/event-format.png)
+
 - device_id - The unique identifier of the device used for scanning items.
 - device_coords - Location of where the device is located. This should be longitude/latitude coordinates.
 - timestamp - Date and timestamp of the item scanning event. The timestamp is in the following UTC format yyyy-mm-dd HH:MM:SS

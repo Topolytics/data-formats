@@ -1,5 +1,7 @@
 ## Event Schema
 
+> Event Details
+
 ```json
 {
   "$id": "event.schema.json",
