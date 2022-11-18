@@ -38,7 +38,8 @@ Topolytics propose the following fields for the events (see [examples](./example
 
 This data should be encoded as valid JSON using UTF-8 character encoding. See Appendex ii for an example POST request using curl.
 
-### The Event Schema
+### Event Schema
+
 The schema documentation complies with the [jsonschema specification](https://json-schema.org/specification.html)
 
 - [Event schema](./schema/events/json/event.schema.md) 
