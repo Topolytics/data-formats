@@ -1,4 +1,4 @@
-# PragmatIC TRACE API Events
+# API Events
 
 > This document describes the API Events expected within the material movement and transformation flow.
 Introduction
