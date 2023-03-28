@@ -59,7 +59,21 @@ The following events have been identified as being relevant to the system.
 | wash | processor | A container is washed |
 | destroy | processor | A container is destroyed |
 
-Please see [events.md](./events.md) for more information on each event type.
+A simple example of the events in a process flow:
+
+```mermaid
+graph TD;
+    A[make] --> B[distribute];
+    B --> C[fill];
+    C --> D[ready_sell];
+    D --> E[returned];
+    E --> F[collected];
+    F --> G[wash];
+    G -->|Product is usable|C;
+    G -->|Product is unusable|H[destroy];
+```
+
+Please see [events.md](./events.md) for more information on each event type and a more detailed process flow grouped by the party involved.
 
 ## Event Schema
 

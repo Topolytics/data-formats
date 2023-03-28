@@ -1,4 +1,4 @@
-# API Events
+# Events
 
 The following events have been identified as being relevant to the system.
 
@@ -12,6 +12,38 @@ The following events have been identified as being relevant to the system.
 | collected | processor | A bin is collected from a retailer |
 | wash | processor | A container is washed |
 | destroy | processor | A container is destroyed |
+
+## Flow of events:
+
+```mermaid
+graph TD;
+    subgraph Manufacturer
+        A[make]
+        B[distribute]
+    end
+    subgraph Retailer
+        C[fill]
+        D[ready_sell]
+    end
+    subgraph Customer
+        E[returned]
+    end
+    subgraph Processor
+        F[collected]
+        G[wash]
+        H[destroy]
+    end
+    
+    A-->B;
+    B-->C;
+    C-->D;
+    D-->E;
+    E-->F;
+    F-->G;
+    G-->|Product is usable|C;
+    G-->|Product is unusable|H;
+```
+
 
 All events have a common set of attributes:
 
