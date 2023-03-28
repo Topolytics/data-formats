@@ -22,22 +22,23 @@
       "example": 1.234
     },
     "device_lat": {
-      "title": "Device Location Latitude",
+      "title": "Device Latitude",
       "description": "Latitude of where the device is located.",
       "type": "number",
       "example": 1.234
     },
     "timestamp": {
       "title": "Timestamp",
-      "description": "Date and timestamp of the item scanning event. - The timestamp is in the following UTC format yyyy-mm-dd HH:MM:SS",
+      "description": "Date and timestamp of the item scanning event. - This should follow RFC3339 (ISO 8601) format.",
       "type": "string",
-      "example": "06/11/2020 15:51:50 UTC"
+      "format": "date-time",
+      "example": "2019-10-12T07:20:50.52Z"
     },
     "event_type": {
       "title": "Event Type",
-      "description": "TBD",
+      "description": "The type of the event. E.g. 'washed'",
       "type": "string",
-      "example": "TBD"
+      "example": "washed"
     },
     "item_id": {
       "title": "Item Identity",
@@ -53,7 +54,7 @@
     },
     "party_id": {
       "title": "Party ID",
-      "description": "Identifier of the party involved. The organisation and owner - idenfication of the device at a site",
+      "description": "Identifier of the party involved. The organisation and owner - identification of the device at a site",
       "type": "string",
       "example": "PTY:778855"
     }

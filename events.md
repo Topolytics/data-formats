@@ -1,42 +1,92 @@
-# API Events
+# Events
 
-> This document describes the API Events expected within the material movement and transformation flow.
-Introduction
+The following events have been identified as being relevant to the system.
 
-To understand how the flow of material operates a simulation was created. Locations were identified and categorised, with different types of activities (events) being undertaken at these locations.
+| Event | Party | Description |
+| --- | --- | --- |
+| make | manufacturer | A container is made |
+| distribute | manufacturer | A container is distributed to a retailer |
+| fill | retailer | A container is filled with a product |
+| ready_sell | retailer | A container is placed on the shelf ready to be sold |
+| returned | customer | A container is returned to a bin at a retailer |
+| collected | processor | A bin is collected from a retailer |
+| wash | processor | A container is washed |
+| destroy | processor | A container is destroyed |
 
-## Location Categories & Activities
-The following is a list of location categories and activities (event types), which translate into API events:
+## Flow of events:
 
-### Manufacturer of the packaging, e.g. Sharpak
-- Category: `package_manufacturer`
-- Activities: `make`
+```mermaid
+graph TD;
+    subgraph Manufacturer
+        A[make]
+        B[distribute]
+    end
+    subgraph Retailer
+        C[fill]
+        D[ready_sell]
+    end
+    subgraph Customer
+        E[returned]
+    end
+    subgraph Processor
+        F[collected]
+        G[wash]
+        H[destroy]
+    end
+    
+    A-->B;
+    B-->C;
+    C-->D;
+    D-->E;
+    E-->F;
+    F-->G;
+    G-->|Product is usable|C;
+    G-->|Product is unusable|H;
+```
 
-### Manufacturer of the filled product, e.g. PrimaFruit
-- Category: `package_manufacturer`
-- Activities: `fill`
 
-### Processor site that washes packaging, e.g. IFCO, Bracknell
-- Category: `processor`
-- Activities: `wash`
+All events have a common set of attributes:
 
-### Distributer of the product, e.g. Waitrose Customer Fulfilment Centre
-- Category: `retail`
-- Activities: `distribute`
+- **device_id** - The unique identifier of the device used for scanning items.
+- **device_lng** - Longitude of where the device is located.
+- **device_lat** - Latitude of where the device is located.
+- **timestamp** - Date and timestamp of the item scanning event. The timestamp format (https://www.rfc-editor.org/rfc/rfc3339) `yyyy-mm-ddThh:mm:ssZ`
+- **event_type** - one of the above events
+- **item_id** - The unique identifier of the item
+- **item_description (optional)** - Text description of the item or material. E.g. "plastic bottle"
 
-### Retailer of the product e.g. Waitrose & Partners
-- Category: `retail`
-- Activities: `sell`
+# make
 
-## Untracked Activities
-Additional activities occur although these may not be captured directly by devices. For example material will leak out of the system, and consumers will not log the purchasing of products.
+A container is made by the manufacturer. Typically this will occur when a new batch of containers is made, or when a new container is made to replace a damaged one.
 
-At some later stage it may be possible to track these activities, however the simulation of material and product flow requires that these activities occur.
+# distribute
 
-### Consumers purchase and consume products
-- Category: `consume`
-- Activities: `consume`
+A container is distributed to a retailer by the manufacturer.
 
-### Material / products leak out of the system
-- Category: `destroy`
-- Activities: `destroy`
+# fill
+
+A container is filled with a product by the retailer.
+
+# ready_sell
+
+A container is placed on the shelf ready to be sold by the retailer.
+
+# returned
+
+A container is returned to a bin at a retailer by the customer.
+
+**NOTE:** The `device_id` attribute should be the identifier of the bin the item is being return to. this should match the `item_id` used in the `collected` event.
+
+# collected
+
+A bin is collected from a retailer by the processor.
+
+**NOTE:** The `item_id` attribute should be the identifier of the bin that is being collected. This should match the `device_id` used in the `returned` event.
+
+# wash
+
+A container is washed by the processor.
+
+# destroy
+
+A container is destroyed by the processor.
