@@ -16,7 +16,8 @@
       "title": "Device ID",
       "description": "The unique identifier of the device used for scanning items.",
       "type": "string",
-      "example": "DID:12345"
+      "example": "DID:12345",
+      "maxLength": 50
     },
     "device_lng": {
       "title": "Device Longitude",
@@ -41,25 +42,50 @@
       "title": "Event Type",
       "description": "The type of the event. E.g. 'washed'",
       "type": "string",
-      "example": "washed"
+      "example": "washed",
+      "maxLength": 50
     },
     "item_id": {
       "title": "Item Identity",
       "description": "The identifier of the item material that can be looked up from - the product database",
       "type": "string",
-      "example": "ITM:112233"
+      "example": "ITM:112233",
+      "maxLength": 50
     },
     "item_description": {
       "title": "Item Description",
       "description": "Text description of the item or material. E.g. “plastic bottle”",
       "type": "string",
-      "example": "plastic bottle"
+      "example": "plastic bottle",
+      "maxLength": 255
     },
     "party_id": {
       "title": "Party ID",
       "description": "Identifier of the party involved. The organisation and owner - identification of the device at a site",
       "type": "string",
-      "example": "PTY:778855"
+      "example": "PTY:778855",
+      "maxLength": 50
+    },
+    "party_description": {
+      "title": "Party Description",
+      "description": "Text description of the party involved. E.g. “Waste Management”",
+      "type": "string",
+      "example": "PTY:778855",
+      "maxLength": 255
+    },
+    "bearer_id": {
+      "title": "Bearer ID",
+      "description": "Identifier of the bearer involved. ",
+      "type": "string",
+      "example": "PTY:778855",
+      "maxLength": 50
+    },
+    "bearer_descripiton": {
+      "title": "Bearer ID",
+      "description": "Text description of the bearer id. E.g. “Loyalty Card”",
+      "type": "string",
+      "example": "PTY:778855",
+      "maxLength": 255
     }
   },
   "required": [
