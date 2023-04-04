@@ -67,21 +67,21 @@
       "title": "Party Description",
       "description": "Text description of the party involved. E.g. “Waste Management”",
       "type": "string",
-      "example": "PTY:778855",
+      "example": "Party description",
       "maxLength": 255
     },
     "bearer_id": {
       "title": "Bearer ID",
       "description": "Identifier of the bearer involved. ",
       "type": "string",
-      "example": "PTY:778855",
+      "example": "BID:AA33ZZ",
       "maxLength": 50
     },
-    "bearer_descripiton": {
-      "title": "Bearer ID",
+    "bearer_description": {
+      "title": "Bearer Description",
       "description": "Text description of the bearer id. E.g. “Loyalty Card”",
       "type": "string",
-      "example": "PTY:778855",
+      "example": "Bearer description",
       "maxLength": 255
     }
   },
