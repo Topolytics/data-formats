@@ -54,6 +54,10 @@ All events have a common set of attributes:
 - **event_type** - one of the above events
 - **item_id** - The unique identifier of the item
 - **item_description (optional)** - Text description of the item or material. E.g. "plastic bottle"
+- **party_id (optional)** - The unique identifier of the party
+- **party_description (optional)** - Text description of the party.
+- **bearer_id (optional)** - The unique identifier of the bearer
+- **bearer_description (optional)** - Text description of the type of bearer id. E.g. "Loyalty card"
 
 # make
 
