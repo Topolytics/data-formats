@@ -10,7 +10,7 @@ This document provides an overview of Topolytic’s proposed architecture for in
 
 ![Architecture Overview Diagram](images/architecture-overview.png)
 ## Event Generation
-Events can be generated in a number of ways ranging from IoT/Embedded devices operating in manufacturing/recovery environments through to hand-held scanners and manual data entry.
+Events can be generated in a number of ways ranging from IoT/Embedded devices operating in manufacturing/recovery environments through to hand held scanners and manual data entry.
 
 ## Event Ingestion
 To support the widest range of event sources Topolytics will provide a simple HTTP(s) API endpoint that can receive a POST request with a JSON payload containing the event details. This mechanism can be used by any device that can connect to the internet and make an HTTP(s) connection.
