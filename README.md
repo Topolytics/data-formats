@@ -4,7 +4,7 @@
 
 
 ## Introduction
-This document provides an overview of Topolytic’s proposed architecture for ingesting real-time events generated from IoT systems.
+This document provides an overview of Topolytic’s proposed architecture for ingesting real time events generated from IoT systems.
 
 ## Architecture Overview
 
@@ -76,6 +76,14 @@ graph TD;
 Please see [events.md](./events.md) for more information on each event type and a more detailed process flow grouped by the party involved.
 
 ## Event Schema
+=======
+- **item_id** - The identifier of the item material that can be looked up from the "product database"
+- **item_description (optional)** - Text description of the item or material. E.g. "plastic bottle"
+- **party_id (optional)** - Identifier of the party involved. The organisation and owner identification of the device at a site
+
+This data should be encoded as valid JSON using UTF-8 character encoding. See Appendex ii for an example POST request using curl.
+
+### Event Schema
 
 The schema documentation complies with the [jsonschema specification](https://json-schema.org/specification.html)
 

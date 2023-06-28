@@ -26,7 +26,7 @@
       "example": 1.234
     },
     "device_lat": {
-      "title": "Device Latitude",
+      "title": "Device Location Latitude",
       "description": "Latitude of where the device is located.",
       "type": "number",
       "example": 1.234

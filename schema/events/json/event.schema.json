@@ -23,7 +23,7 @@
       "example": 1.234
     },
     "device_lat": {
-      "title": "Device Latitude",
+      "title": "Device Location Latitude",
       "description": "Latitude of where the device is located.",
       "type": "number",
       "example": 1.234
@@ -41,6 +41,12 @@
       "type": "string",
       "example": "washed",
       "maxLength": 50
+    },
+    "event_type": {
+      "title": "Event Type",
+      "description": "TBD",
+      "type": "string",
+      "example": "TBD"
     },
     "item_id": {
       "title": "Item Identity",
@@ -83,7 +89,7 @@
       "type": "string",
       "example": "Bearer description",
       "maxLength": 255
-    }
+    },
   },
   "required": [
     "device_id",
